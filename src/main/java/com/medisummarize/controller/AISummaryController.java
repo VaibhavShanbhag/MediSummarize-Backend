@@ -67,7 +67,7 @@ public class AISummaryController {
             Optional<AISummary> aiSummaryOptional = aiSummaryService.getAISummariesByReportId(reportId).stream().findFirst();
             if (aiSummaryOptional.isPresent()) {
                 AISummary aiSummary = aiSummaryOptional.get();
-                return ResponseEntity.status(HttpStatus.OK).body(Map.of("summary", aiSummary.getSummaryText()));
+                return ResponseEntity.status(HttpStatus.OK).body(Map.of("summary", aiSummary));
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", "No summary found for the given report ID"));
             }
