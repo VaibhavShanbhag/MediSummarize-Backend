@@ -21,5 +21,6 @@ public class Report {
     private String extractedText;
     private Long doctorId;
     private Long patientId;
+    private String reportType;
     private LocalDateTime uploadedAt = LocalDateTime.now();
 }

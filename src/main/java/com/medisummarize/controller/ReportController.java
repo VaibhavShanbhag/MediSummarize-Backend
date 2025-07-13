@@ -53,6 +53,7 @@ public class ReportController {
             report.setPatientId(patientUserId);
             report.setFileUrl(reportRequestDTO.fileURL());
             report.setExtractedText(reportRequestDTO.extractedText());
+            report.setReportType(reportRequestDTO.reportType());
             Report createdReport = reportService.createReport(report);
             String emailResponse = reportService.sendReportToPatient(reportRequestDTO.patientEmail(), userService.getUserByEmail(reportRequestDTO.patientEmail()).getName());
             ReportResponseDTO reportResponseDTO = new ReportResponseDTO(createdReport, emailResponse);
@@ -102,6 +103,7 @@ public class ReportController {
                         "extractedText", report.getExtractedText(),
                         "doctor", doctorInfo,
                         "patient", patientInfo,
+                        "reportType", report.getReportType(),
                         "uploadedAt", report.getUploadedAt().toString()
                 );
             }).toList();
@@ -135,6 +137,7 @@ public class ReportController {
                         "extractedText", report.getExtractedText(),
                         "doctor", doctorInfo,
                         "patient", patientInfo,
+                        "reportType", report.getReportType(),
                         "uploadedAt", report.getUploadedAt().toString()
                 );
             }).toList();
