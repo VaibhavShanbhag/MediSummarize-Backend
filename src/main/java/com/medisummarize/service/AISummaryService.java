@@ -60,7 +60,7 @@ public class AISummaryService {
                 
                 👨‍⚕️ Reviewed By:
                 
-                %s
+                Dr. %s
                 
                 Thank you for using MediSummarize.
                 

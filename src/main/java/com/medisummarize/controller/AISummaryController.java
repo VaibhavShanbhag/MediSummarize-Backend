@@ -77,7 +77,7 @@ public class AISummaryController {
     }
 
     @PreAuthorize("hasRole('PATIENT')")
-    @GetMapping("/get/all")
+    @PostMapping("/get/all")
     public ResponseEntity<Map<String, Object>> getAllAISummaries(@RequestBody JsonNode reports) {
         try {
             var summaries = aiSummaryService.getAllAISummaries();
@@ -103,7 +103,7 @@ public class AISummaryController {
     }
 
     @PreAuthorize("hasRole('PATIENT')")
-    @GetMapping("/sendEmail")
+    @PostMapping("/sendEmail")
     public ResponseEntity<String> sendAISummaryEmail(@RequestBody MedicalReportEmailRequestDTO medicalReportEmailRequestDTO) {
         try {
             String emailResponse = aiSummaryService.sendMedicalReportToPatient(medicalReportEmailRequestDTO);

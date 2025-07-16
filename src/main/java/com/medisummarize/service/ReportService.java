@@ -82,7 +82,7 @@ public class ReportService {
             
             To view and download your report, please log in to your MediSummarize account:
             
-            🔗 http://localhost:5172/login
+            🔗 http://localhost:8081/login
             
             If you have any questions or concerns, please contact your healthcare provider directly.
             
